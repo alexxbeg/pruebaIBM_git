@@ -1,0 +1,3 @@
+rootProject.name = 'PruebaIBM'
+include ':PruebaIBM.backend'
+project(':PruebaIBM.backend').projectDir = "$rootDir/PruebaIBM.backend" as File

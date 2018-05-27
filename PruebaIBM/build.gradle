@@ -1,0 +1,43 @@
+ allprojects  {
+  apply plugin: 'maven'
+  apply plugin: 'eclipse'
+  apply plugin: 'eclipse-wtp'
+  apply plugin: 'maven-publish'
+
+  group = 'PruebaIBM'
+  version = '1.0'
+}
+
+publishing {
+ publications {
+     pom(MavenPublication)
+  }
+}
+
+
+subprojects {
+  apply plugin: 'java'
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  publishing {
+      repositories {
+          maven {
+             url "$buildDir/repo"
+          }
+      }
+  }
+  
+  repositories {
+    mavenLocal()
+    
+    maven { url "http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/" }
+    maven { url "https://repo.maven.apache.org/maven2" }
+    
+  }
+  
+}
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '2.7'
+    }
