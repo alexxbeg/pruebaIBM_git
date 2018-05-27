@@ -20,6 +20,7 @@ public class PedidoDAOImpl implements PedidoDAO{
 		this.sessionFactory = sesionFactory;
 	}
 
+	
 	@Override
 	public void registrarPedido(Pedidos pedido) {
 		try {
