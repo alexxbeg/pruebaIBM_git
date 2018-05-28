@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.prueba.ibm.dao.impl.PedidoDAOImpl;
 import com.prueba.ibm.dao.impl.ProductoDAOImpl;
 import com.prueba.ibm.logica.facade.ProductosService;
 import com.prueba.ibm.modelo.Productos;
@@ -25,7 +24,7 @@ public class ProductosServiceImpl implements ProductosService{
 			}
 			return producto;
 		}catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e,e);;
 		}
 		return producto;
 	}
